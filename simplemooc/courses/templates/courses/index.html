@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="splash">
+        <div class="pure-g-r">
+            <div class="pure-u-1">
+                <div class="l-box splash-text">
+                    <h1 class="splash-head">
+                        Listagem dos cursos
+                    </h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+{% for course in courses %}
+    <div class="pure-g-r content-ribbon">
+        <div class="pure-u-1-3">
+            <div class="l-box">
+            	<a href="{{ course.get_absolute_url }}">
+            		{% if course.image %}
+                		<img src="{{ course.image.url }}" alt="{{ course.name }}">
+            		{% else %}
+            			<img src="{% static 'img/courses.jpg' %}" alt="{{ course.name }}">
+                    {% endif %}
+                </a>    
+            </div>
+        </div>
+        <div class="pure-u-2-3">
+            <div class="l-box">
+                <a href="{{ course.get_absolute_url }}">
+                    <h4 class="content-subhead">{{ course.name }}</h4>
+                </a>    
+                {{ course.description|linebreaks }}
+            </div>
+        </div>
+    </div>
+{% empty %}
+<div class="splash">
+        <div class="pure-g-r">
+            <div class="pure-u-1">
+                <div class="l-box splash-text">
+                    <h4 class="splash-head">
+                        Nenhum curso está disponível.
+                    </h4>
+                    
+                </div>
+            </div>
+        </div>
+    </div>    
+{% endfor %}   
+{% endblock %}
