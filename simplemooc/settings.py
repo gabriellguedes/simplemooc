@@ -125,15 +125,16 @@ MEDIA_ROOT= os.path.join(BASE_DIR,'simplemooc', 'media')
 MEDIA_URL = '/media/'
 
 #E-mail
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 #EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+"""
 DEFAULT_FROM_EMAIL = 'HackersTeam <email.hackersteam@gmail.com>'
 EMAIL_USE_TSL = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'email.hackersteam@gmail.com'
 EMAIL_HOST_PASSWORD = 'H4ck3rsT34m'
 EMAIL_PORT = '465'
-
+"""
 CONTACT_EMAIL = 'gguedes10@gmail.com'
 
 #Auth
